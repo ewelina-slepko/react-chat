@@ -6,10 +6,20 @@ const GlobalStyle = createGlobalStyle`
   font-size: 1.25rem;
 }
   body {
-    margin: 0;
-    padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif,serif;
+  margin: 0;
+  padding: 0;
+  font-family: Open-Sans, Helvetica, Sans-Serif,serif;
   }
+  
+  html, body, #root {
+  height: 100%;
+  }
+  
+  #root {
+  display: flex;
+  flex-direction: column;
+  }
+  
 `;
 
 export default GlobalStyle;
