@@ -1,2 +1,4 @@
-export type NavbarProps = {
+export type HamburgerProps = {
+    isActive: boolean;
+    onToggle: () => void;
 }

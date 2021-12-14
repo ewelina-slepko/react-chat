@@ -1,11 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import { StyledSidebar } from "./Sidebar.styled";
-import { Hamburger } from "./Hamburger/Hamburger";
 
-export const Sidebar = () => {
-  return (
-    <StyledSidebar>
-      <Hamburger />
-    </StyledSidebar>
-  );
+export type SidebarProps = {
+  isActive: boolean;
+};
+
+export const Sidebar: FC<SidebarProps> = ({ isActive }) => {
+  return <StyledSidebar></StyledSidebar>;
 };
