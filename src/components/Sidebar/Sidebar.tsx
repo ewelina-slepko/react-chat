@@ -6,5 +6,5 @@ export type SidebarProps = {
 };
 
 export const Sidebar: FC<SidebarProps> = ({ isActive }) => {
-  return <StyledSidebar></StyledSidebar>;
+  return <StyledSidebar isActive={isActive}></StyledSidebar>;
 };

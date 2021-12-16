@@ -5,18 +5,21 @@ import {
   Title,
   HamburgerContainer,
   Line,
+  LinesWrapper,
 } from "./Navbar.styled";
 import img from "../../assets/chat.png";
 import { HamburgerProps } from "./Navbar.d";
 
 export const Navbar: FC<HamburgerProps> = ({ isActive, onToggle }) => (
   <StyledNavbar>
-    <HamburgerContainer isActive={isActive} onClick={onToggle}>
-      <Line />
-      <Line />
-      <Line />
+    <HamburgerContainer>
+      <LinesWrapper isActive={isActive} onClick={onToggle}>
+        <Line />
+        <Line />
+        <Line />
+      </LinesWrapper>
     </HamburgerContainer>
-    <Icon src={img} width="40" height="40" />
+    <Icon src={img} width="35" height="35" />
     <Title>Chat</Title>
   </StyledNavbar>
 );

@@ -9,7 +9,18 @@ export const StyledNavbar = styled.div`
   border-bottom: 1px solid #eeeeee;
 `;
 
-export const HamburgerContainer = styled.div<HamburgerContainerProps>(
+export const HamburgerContainer = styled.div`
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 0.75rem;
+  border-radius: 1.5rem;
+  background: #ebebeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LinesWrapper = styled.div<HamburgerContainerProps>(
   ({ isActive }) => css`
     :hover {
       cursor: pointer;
@@ -39,10 +50,11 @@ export const Line = styled.span`
 `;
 
 export const Icon = styled.img`
-  margin: 1rem;
+  margin: 0 0.25rem;
 `;
 
 export const Title = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #6f6f6f;
+  margin: 0 0.25rem;
 `;
