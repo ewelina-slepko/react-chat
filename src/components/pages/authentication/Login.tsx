@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { handleLogin } from "../../../services/auth";
+import {
+  checkIfUserIsAuthenticated,
+  handleLogin,
+} from "../../../services/auth";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const logIn = () => {
-    handleLogin(email, password);
+    handleLogin(email, password).then((userCredential) => {
+      const user = userCredential?.user;
+      console.log("Singed in user: ", user);
+    });
   };
   return (
     <div>

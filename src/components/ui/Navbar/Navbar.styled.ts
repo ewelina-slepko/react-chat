@@ -9,6 +9,12 @@ export const StyledNavbar = styled.div`
   border-bottom: 1px solid #eeeeee;
 `;
 
+export const MenuContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
+
 export const HamburgerContainer = styled.div`
   width: 2.5rem;
   height: 2.5rem;
@@ -50,7 +56,8 @@ export const Line = styled.span`
 `;
 
 export const Icon = styled.img`
-  margin: 0 0.25rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
 `;
 
 export const Title = styled.span`
