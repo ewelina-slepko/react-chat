@@ -1,33 +1,19 @@
 import React, { useState } from "react";
 import GlobalStyle from "./globalStyles";
 import { Routes, Route } from "react-router-dom";
-import { Dashboard } from "./components/Dashboard";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Layout, LayoutWrapper } from "./App.styled";
-import { Sidebar } from "./components/Sidebar/Sidebar";
-
-const useSideMenu = () => {
-  const [isActive, setIsActive] = useState(false);
-  const toggle = () => setIsActive(!isActive);
-
-  return { isActive, toggle };
-};
+import { Dashboard } from "./components/pages/Dashboard";
+import { Login } from "./components/pages/authentication/Login";
+import { Register } from "./components/pages/authentication/Register";
 
 export const App = () => {
-  const { isActive, toggle } = useSideMenu();
-
   return (
     <>
       <GlobalStyle />
-      <Navbar isActive={isActive} onToggle={toggle} />
-      <LayoutWrapper>
-        <Sidebar isActive={isActive} />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-          </Routes>
-        </Layout>
-      </LayoutWrapper>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 };

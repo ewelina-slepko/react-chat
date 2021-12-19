@@ -7,7 +7,7 @@ import {
   Line,
   LinesWrapper,
 } from "./Navbar.styled";
-import img from "../../assets/chat.png";
+import img from "../../../assets/chat.png";
 import { HamburgerProps } from "./Navbar.d";
 
 export const Navbar: FC<HamburgerProps> = ({ isActive, onToggle }) => (
