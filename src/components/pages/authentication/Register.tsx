@@ -1,12 +1,15 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { handleRegister } from "../../../services/auth";
 import { Input } from "../../ui/Input/Input";
+import { Form, Container } from "./Authentication.styled";
+import { Button } from "../../ui/Button/Button";
 
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = () => {
+  const register = (e: FormEvent) => {
+    e.preventDefault();
     handleRegister(email, password).then((userCredential) => {
       const user = userCredential?.user;
       console.log("Registered user: ", user);
@@ -19,27 +22,27 @@ export const Register = () => {
     setPassword(event.target.value);
 
   return (
-    <div>
+    <Container>
       <h1>Sign Up</h1>
-      <div>
-        E-mail
-        <Input
-          value={email}
-          label="E-mail"
-          type="text"
-          onChange={handleEmail}
-        />
-      </div>
-      <div>
-        Password
-        <Input
-          value={password}
-          label="Password"
-          type="password"
-          onChange={handlePassword}
-        />
-      </div>
-      <button onClick={register}>Submit</button>
-    </div>
+      <Form onSubmit={register}>
+        <div>
+          <Input
+            value={email}
+            label="E-mail"
+            type="email"
+            required={true}
+            onChange={handleEmail}
+          />
+          <Input
+            value={password}
+            label="Password"
+            type="password"
+            required={true}
+            onChange={handlePassword}
+          />
+        </div>
+        <Button type="submit">Submit</Button>
+      </Form>
+    </Container>
   );
 };
