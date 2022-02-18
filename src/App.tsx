@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GlobalStyle from "./globalStyles";
 import { Routes, Route } from "react-router-dom";
-import { Dashboard } from "./components/pages/Dashboard";
+import { Dashboard } from "./components/pages/Dashboard/Dashboard";
 import { Login } from "./components/pages/authentication/Login";
 import { Register } from "./components/pages/authentication/Register";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
