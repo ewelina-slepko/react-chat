@@ -31,7 +31,6 @@ export const Dashboard = () => {
 
   onSnapshot(
     q,
-
     (el) => {
       console.log("new Message", el);
       const data = el.docs.map((doc) => ({
@@ -48,7 +47,7 @@ export const Dashboard = () => {
     <>
       <Navbar isActive={isActive} onToggle={toggle} />
       <LayoutWrapper>
-        <Sidebar isActive={isActive} />
+        <Sidebar />
         <Layout>
           Wiadomości:
           {messages.map((msg) => (

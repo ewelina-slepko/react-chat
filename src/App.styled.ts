@@ -9,4 +9,5 @@ export const LayoutWrapper = styled.div`
 export const Layout = styled.div`
   height: 100%;
   flex: 1;
+  background: #1f2020;
 `;

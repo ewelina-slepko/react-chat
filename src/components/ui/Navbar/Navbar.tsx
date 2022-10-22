@@ -2,9 +2,6 @@ import React, { FC } from "react";
 import {
   StyledNavbar,
   Title,
-  HamburgerContainer,
-  Line,
-  LinesWrapper,
   MenuContainer,
   Icon,
 } from "./Navbar.styled";
@@ -17,13 +14,6 @@ export const Navbar: FC<HamburgerProps> = ({ isActive, onToggle }) => {
   return (
     <StyledNavbar>
       <MenuContainer>
-        <HamburgerContainer>
-          <LinesWrapper isActive={isActive} onClick={onToggle}>
-            <Line />
-            <Line />
-            <Line />
-          </LinesWrapper>
-        </HamburgerContainer>
         <Icon src={mainIcon} width="35" height="35" />
         <Title>Chat</Title>
       </MenuContainer>
