@@ -38,7 +38,7 @@ export const Bar = styled.span`
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #31a235;
+    background: #a395cc;
     transition: 0.2s ease all;
   }
 `;
@@ -60,6 +60,8 @@ export const StyledInput = styled.input`
   width: 16rem;
   border: none;
   border-bottom: 1px solid #757575;
+  background: #252626;
+  color: #dadada;
 
   :focus {
     outline: none;
@@ -67,10 +69,11 @@ export const StyledInput = styled.input`
   }
 
   :focus ~ label,
-  :valid ~ label {
+  :valid ~ label,
+  :invalid ~ label {
     top: -1rem;
-    font-size: .75rem;
-    color: #31a235;
+    font-size: 0.75rem;
+    color: #a395cc;
   }
 
   :focus ~ ${Bar}:before, :focus ~ ${Bar}:after {
@@ -88,7 +91,7 @@ export const Label = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: .25rem;
-  top: .125rem;
+  left: 0.25rem;
+  top: 0.125rem;
   transition: 0.2s ease all;
 `;

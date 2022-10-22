@@ -42,6 +42,7 @@ export const Register = () => {
           />
         </div>
         <Button type="submit">Submit</Button>
+        <span>Do you have an account? Sign In!</span> 
       </Form>
     </Container>
   );

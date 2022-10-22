@@ -3,8 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   html {
   line-height: 1.75;
-  font-size: 1.25rem;
-  color: #bdbdbd;
+  color: #dadada;
   }
   
   body {

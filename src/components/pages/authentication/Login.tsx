@@ -1,8 +1,9 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { handleLogin } from "../../../services/auth";
 import { Input } from "../../ui/Input/Input";
-import { Container, Form } from "./Authentication.styled";
+import { ButtonContainer, Container, Form } from "./Authentication.styled";
 import { Button } from "../../ui/Button/Button";
+import { Typography } from "../../ui/Typography/Typography";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -28,18 +29,23 @@ export const Login = () => {
             value={email}
             label="E-mail"
             type="email"
-            required={true}
             onChange={handleEmail}
+            required
           />
           <Input
             value={password}
             label="Password"
             type="password"
-            required={true}
             onChange={handlePassword}
+            required
           />
         </div>
-        <Button type="submit">Submit</Button>
+        <ButtonContainer>
+          <Button type="submit">Submit</Button>
+          <Typography variant="caption" align="center">
+            Don't you have an account? Sign Up!
+          </Typography>
+        </ButtonContainer>
       </Form>
     </Container>
   );

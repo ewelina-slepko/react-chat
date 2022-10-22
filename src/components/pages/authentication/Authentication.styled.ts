@@ -1,10 +1,11 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #252626;
 `;
 
 export const Form = styled.form`
@@ -12,5 +13,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-end;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
