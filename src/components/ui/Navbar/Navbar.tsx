@@ -1,10 +1,5 @@
-import React, { FC } from "react";
-import {
-  StyledNavbar,
-  Title,
-  MenuContainer,
-  Icon,
-} from "./Navbar.styled";
+import { FC } from "react";
+import { StyledNavbar, Title, MenuContainer, Icon } from "./Navbar.styled";
 import mainIcon from "../../../assets/chat.png";
 import logoutIcon from "../../../assets/logout.png";
 import { HamburgerProps } from "./Navbar.d";

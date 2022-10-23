@@ -1,9 +1,10 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { handleLogin } from "../../../services/auth";
 import { Input } from "../../ui/Input/Input";
 import { ButtonContainer, Container, Form } from "./Authentication.styled";
 import { Button } from "../../ui/Button/Button";
 import { Typography } from "../../ui/Typography/Typography";
+import { Link } from "../../ui/Link/Link.styled";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ export const Login = () => {
         <ButtonContainer>
           <Button type="submit">Submit</Button>
           <Typography variant="caption" align="center">
-            Don't you have an account? Sign Up!
+            Don't you have an account? <Link to="/register">Sign Up!</Link>
           </Typography>
         </ButtonContainer>
       </Form>

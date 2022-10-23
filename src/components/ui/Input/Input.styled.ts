@@ -53,37 +53,49 @@ export const Highlight = styled.span`
   opacity: 0.5;
 `;
 
-export const StyledInput = styled.input`
-  font-size: 1rem;
-  padding: 0.375rem;
-  display: block;
-  width: 16rem;
-  border: none;
-  border-bottom: 1px solid #757575;
-  background: #252626;
-  color: #dadada;
+export const StyledInput = styled.input(({ value }) => {
+  console.log("val", value);
 
-  :focus {
-    outline: none;
-    border: 0;
-  }
+  return css`
+    font-size: 1rem;
+    padding: 0.375rem;
+    display: block;
+    width: 16rem;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: #252626;
+    color: #dadada;
 
-  :focus ~ label,
-  :valid ~ label,
-  :invalid ~ label {
-    top: -1rem;
-    font-size: 0.75rem;
-    color: #a395cc;
-  }
+    :focus {
+      outline: none;
+      border: 0;
+    }
 
-  :focus ~ ${Bar}:before, :focus ~ ${Bar}:after {
-    width: 50%;
-  }
+    :focus ~ label,
+    :valid ~ label {
+      top: -1rem;
+      font-size: 0.75rem;
+      color: #a395cc;
+    }
 
-  :focus ~ ${Highlight} {
-    animation: inputHighlighter 0.3s ease;
-  }
-`;
+    ${value &&
+    css`
+      :invalid ~ label {
+        top: -1rem;
+        font-size: 0.75rem;
+        color: #a395cc;
+      }
+    `}
+
+    :focus ~ ${Bar}:before, :focus ~ ${Bar}:after {
+      width: 50%;
+    }
+
+    :focus ~ ${Highlight} {
+      animation: inputHighlighter 0.3s ease;
+    }
+  `;
+});
 
 export const Label = styled.label`
   color: #999;

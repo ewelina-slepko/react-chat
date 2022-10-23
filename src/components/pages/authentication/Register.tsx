@@ -1,8 +1,10 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { handleRegister } from "../../../services/auth";
 import { Input } from "../../ui/Input/Input";
-import { Form, Container } from "./Authentication.styled";
+import { Form, Container, ButtonContainer } from "./Authentication.styled";
 import { Button } from "../../ui/Button/Button";
+import { Typography } from "../../ui/Typography/Typography";
+import { Link } from "../../ui/Link/Link.styled";
 
 export const Register = () => {
   const [email, setEmail] = useState("");
@@ -41,8 +43,12 @@ export const Register = () => {
             onChange={handlePassword}
           />
         </div>
-        <Button type="submit">Submit</Button>
-        <span>Do you have an account? Sign In!</span> 
+        <ButtonContainer>
+          <Button type="submit">Submit</Button>
+          <Typography variant="caption" align="center">
+            Do you have an account? <Link to="/">Sign In!</Link>
+          </Typography>
+        </ButtonContainer>
       </Form>
     </Container>
   );
