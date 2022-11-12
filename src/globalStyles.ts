@@ -6,10 +6,15 @@ const GlobalStyle = createGlobalStyle`
   color: #dadada;
   }
   
+ * {
+  box-sizing: border-box;
+ }
+
   body {
   margin: 0;
   padding: 0;
   font-family: Open-Sans, Helvetica, Sans-Serif,serif;
+  font-size: 16px;
   }
   
   html, body, #root {

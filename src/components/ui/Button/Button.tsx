@@ -1,8 +1,5 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
+import { FC } from "react";
 import { SubmitButton } from "./Button.styled";
+import { ButtonProps } from "./Button.types";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {};
-
-export const Button: FC<ButtonProps> = (props) => {
-    return <SubmitButton {...props}/>;
-};
+export const Button: FC<ButtonProps> = (props) => <SubmitButton {...props} />;

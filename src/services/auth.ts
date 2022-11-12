@@ -2,38 +2,35 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithRedirect,
   sendPasswordResetEmail,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import "../firebase-config";
 
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 export const handleRegister = (email: string, password: string) => {
-  return createUserWithEmailAndPassword(auth, email, password).catch(
-    (error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log("Error ocured: ", errorCode, errorMessage);
-    }
+  return createUserWithEmailAndPassword(auth, email, password).catch((error) =>
+    showError(error)
   );
 };
 
 export const handleLogin = (email: string, password: string) => {
-  return signInWithEmailAndPassword(auth, email, password).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("An error occured: ", errorCode, errorMessage);
-  });
+  return signInWithEmailAndPassword(auth, email, password).catch((error) =>
+    showError(error)
+  );
+};
+
+export const handleLoginWithGoogle = () => {
+  return signInWithRedirect(auth, provider).catch((error) => showError(error));
 };
 
 export const handleLogout = () => {
-  return signOut(auth).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log("An error occured: ", errorCode, errorMessage);
-  });
+  return signOut(auth).catch((error) => showError(error));
 };
 
 export const handleReset = (email: string) => {
@@ -41,11 +38,13 @@ export const handleReset = (email: string) => {
     .then(() => {
       console.log("success");
     })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log("An error has occured: ", errorCode, errorMessage);
-    });
+    .catch((error) => showError(error));
+};
+
+const showError = (error: any) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log("An error has occured: ", errorCode, errorMessage);
 };
 
 export const checkIfUserIsAuthenticated = () =>

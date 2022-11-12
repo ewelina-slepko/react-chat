@@ -54,8 +54,6 @@ export const Highlight = styled.span`
 `;
 
 export const StyledInput = styled.input(({ value }) => {
-  console.log("val", value);
-
   return css`
     font-size: 1rem;
     padding: 0.375rem;
